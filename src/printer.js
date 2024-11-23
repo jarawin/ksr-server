@@ -1,3 +1,5 @@
+import fs from "fs";
+
 import {
   ThermalPrinter,
   PrinterTypes,
@@ -11,9 +13,7 @@ const printer = new ThermalPrinter({
   type: PrinterTypes.EPSON,
 });
 
-import fs from "fs";
-const logoBuffer = fs.readFileSync("../public/ksrlogo.png");
-
+const logoBuffer = fs.readFileSync("./src/assets/logo.png");
 const lineFeed = () =>
   JSON.parse(
     JSON.stringify([

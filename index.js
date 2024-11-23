@@ -5,7 +5,7 @@ import {
   checkPrinterStatus,
   printPreReceipt,
   printReceipt,
-} from "./src/printer";
+} from "./src/printer.js";
 
 dotenv.config();
 const app = express();
