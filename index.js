@@ -45,7 +45,12 @@ app.get("/status", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  const { VERSION } = process.env;
+  res.send(`Server running version ${VERSION}`);
+});
+
 const { PORT } = process.env;
-app.listen(PORT, () => {
+app.listen(PORT || 3000, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

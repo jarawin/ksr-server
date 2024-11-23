@@ -4,12 +4,11 @@ import {
   CharacterSet,
 } from "node-thermal-printer";
 
+const { PRINTER_HOST, PRINTER_PORT } = process.env;
 const printer = new ThermalPrinter({
-  interface: `tcp://${process.env.PRINTER_HOST}:${process.env.PRINTER_PORT}`,
+  interface: `tcp://${PRINTER_HOST}:${PRINTER_PORT}`,
   characterSet: CharacterSet.WPC1252,
   type: PrinterTypes.EPSON,
-  //   interface: "tcp://ksrcarclean.thddns.net:7372",
-  //   interface: "tcp://promsawat.thddns.net:4640",
 });
 
 import fs from "fs";
